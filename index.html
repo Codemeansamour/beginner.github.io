@@ -1,112 +1,144 @@
-<!DOCTYPE html>
+
 <html lang="en">
   <head>
+    <style>
+      .container {
+        margin: 0 auto;
+        max-width: 600px;
+      }
+      body {
+        text-align: center;
+        background-color: #ffcbcb;
+      }
+      h1 {
+        font-family: cursive;
+        font-size: 80px;
+        margin-bottom: 10;
+        color: #132743;
+      }
+      h2 {
+        font-style: oblique;
+        font-weight: 400;
+        color: white;
+        text-shadow: 1 1 1px black;
+      }
+      p {
+        font-family: "Courier New", Courier, monospace;
+      }
+      span {
+        font-weight: 200;
+      }
+      h4 {
+        font-weight: 200;
+        margin: 40 0;
+        color: #132743;
+      }
+      .wine {
+        margin-bottom: 20;
+      }
+      li {
+        display: block;
+        list-style: none;
+        margin: 0 auto;
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .rosewine {
+        margin-bottom: 70;
+      }
+      button {
+        display: block;
+        align-self: auto;
+        margin: 0 auto;
+        border: 1px solid #fff;
+        line-height: 1, 5;
+        margin-bottom: 20px;
+        margin-top: 1px;
+        line-height: 18px;
+
+        background-color: pink;
+        box-shadow: none;
+        cursor: grab;
+        transition: all 200ms ease-in-out;
+      }
+      a {
+        display: block;
+        text-decoration-line: none;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        padding: 10px;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="src/styles.css" />
-    <title>Weather App</title>
+    <title>💗L'amour</title>
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form class="search-form">
-          <div class="row">
-            <div class="col-9">
-              <input
-                type="search"
-                placeholder="Type a city.."
-                autofocus="on"
-                autocomplete="off"
-                class="form-control shadow-sm"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-primary shadow-sm"
-              />
-            </div>
-          </div>
-        </form>
-        <h1>Sydney NSW, Australia</h1>
-        <ul>
-          <li>Wednesday 22:00</li>
-          <li>Partly Cloudy</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="Cloudy icon"
-                class="weather-icon float-left"
-              />
-              <div class="float-left">
-                <span class="temperature">19</span
-                ><span class="units">°C | <a href="#">°F</a></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 77%</li>
-              <li>Wind: 8 km/h</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <h1>Menu</h1>
+      <hr />
+      <h2>Summer Date Version</h2>
+
+      <h4>
+        <span>Entrée</span>
+        <p>Classic Spanish Gazpacho Served with homemade Garlic Bread</p>
+      </h4>
+      <h4>
+        <span>Main dish</span>
+        <p>Pan-Seared Steak Salad with Lemon Vinaigrette</p>
+      </h4>
+      <h4>
+        <span>Dessert</span>
+        <p>Authentic Italian Tiramisu</p>
+      </h4>
+      <h4 class="wine">Wines</h4>
+      <li>
+        Brouily 2020
+        <p>
+          <em>light and fresh red wine with berry fruit-forward flavors</em>
+        </p>
+      </li>
+      <li class="Rosewine">
+        Pink Pét-Nat 2020
+        <p>
+          <em>Super tasty sparkling Rosé with herbes and apples notes</em>
+        </p>
+      </li>
+
+      <button>Reservation</button>
+
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/094/545/original/hcmp333335_1946985.jpeg?1692914199"
+        alt="Cafe Blumental"
+        width="300px"
+        height="300px"
+      />
+      <a href="https://blumental-berlin.de"> Hosted at Blumental</a>
+      <br />
+      <p class="footer">
+        <em>Coded by Thanh Vu</em>
+      </p>
     </div>
     <script>
-      let weather = {
-        paris: {
-          temp: 19.7,
-          humidity: 80,
-        },
-        tokyo: {
-          temp: 17.3,
-          humidity: 50,
-        },
-        lisbon: {
-          temp: 30.2,
-          humidity: 20,
-        },
-        "san francisco": {
-          temp: 20.9,
-          humidity: 100,
-        },
-        moscow: {
-          temp: -5,
-          humidity: 20,
-        },
-      };
-
-      let city = prompt("Enter a city?");
-      city = city.toLowerCase();
-      if (weather[city] !== undefined) {
-        let temperature = weather[city].temp;
-        //alert will look after weather then city pad
-        let humidity = weather[city].humidity;
-        let celsiusTemperature = Math.round(temperature);
-        let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
-        // if city is unlike undefined, alert
-        alert(
-          `It is currently ${celsiusTemperature}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${humidity}%`
-        );
-      } else {
-        alert(
-          `Sorry we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
-        );
+      function Reservation() {
+        let person = prompt("For how many people?");
+        let date = prompt("Which date are you coming?");
+        let name = prompt("What time?");
+        let vegetarian = prompt("Is there any vegetarian?");
+        vegetarian = vegetarian.toLowerCase().trim();
+        if (vegetarian === "yes") {
+          alert(
+            " For Main Dish we could offer Grilled Cheese instead of Steak "
+          );
+          alert("Thank you for the reservation. See you soon!");
+        } else {
+          alert(" Thank you for the reservation. See you soon!");
+        }
       }
+      let Rebutton = document.querySelector("button");
+      Rebutton.addEventListener("click", Reservation);
     </script>
   </body>
 </html>
+
 
